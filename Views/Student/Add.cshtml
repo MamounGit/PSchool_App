@@ -1,0 +1,77 @@
+﻿@model PSchoolApp.Models.DTO.AddStudentViewModel
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+
+@{
+    ViewData["Title"] = "Add Student";
+}
+<h2 class="mt-3 mb-4">Add New Student</h2>
+
+<form asp-action="Add" method="post" class="needs-validation" novalidate>
+    <div class="row mb-3">
+        <label asp-for="F_Name" class="form-label col-sm-2">First Name</label>
+        <div class="col-sm-10">
+            <input asp-for="F_Name" class="form-control" />
+            <span asp-validation-for="F_Name" class="text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label asp-for="S_Name" class="form-label col-sm-2">Second Name</label>
+        <div class="col-sm-10">
+            <input asp-for="S_Name" class="form-control" />
+            <span asp-validation-for="S_Name" class="text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label asp-for="Phone" class="form-label col-sm-2">Phone</label>
+        <div class="col-sm-10">
+            <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label asp-for="Address" class="form-label col-sm-2">Address</label>
+        <div class="col-sm-10">
+            <input asp-for="Address" class="form-control" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label asp-for="Email" class="form-label col-sm-2">Email</label>
+        <div class="col-sm-10">
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label asp-for="Email" class="form-label col-sm-2">ParentID</label>
+        <div class="col-sm-10">
+            <input asp-for="ParentID" class="form-control" />
+            <span asp-validation-for="ParentID" class="text-danger"></span>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-10 offset-sm-2">
+            <button type="submit" class="btn btn-primary">Add Student</button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">Cancel</a>
+        </div>
+    </div>
+</form>
+
